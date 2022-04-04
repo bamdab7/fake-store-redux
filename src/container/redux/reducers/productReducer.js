@@ -1,7 +1,7 @@
 import { ActionTypes } from "../constants/action-types";
 
 //crearemos un estado inicial para nuestro producto
-const initialState={ //productos será inicialmente un array vacio
+const initialState={ //productos será inicialmente un array vacio, luego le añadimos informacion
     products:[{
         id: 1, 
         title: "First title",
