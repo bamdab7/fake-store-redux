@@ -8,7 +8,7 @@ const initialState={ //productos será inicialmente un array vacio
         category: "best category",
     }], 
 }
-export const productReducer = (state, {type,payload} ) =>{ //añadiremos el estado inicial el parametro action
+export const productReducer = (state=initialState, {type,payload} ) =>{ //añadiremos el estado inicial el parametro action
     //añadimos los casos posibles mediante un switch
     switch(type){
         case ActionTypes.SET_PRODUCTS: 
