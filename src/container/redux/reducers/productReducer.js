@@ -6,7 +6,8 @@ const initialState={ //productos será inicialmente un array vacio, luego le añ
         id: 1, 
         title: "First title",
         category: "best category",
-    }], 
+    }   
+], 
 }
 export const productReducer = (state=initialState, {type,payload} ) =>{ //añadiremos el estado inicial el parametro action
     //añadimos los casos posibles mediante un switch
