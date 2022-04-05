@@ -17,7 +17,7 @@ const ProductListing = () =>{ //busqueda del producto de la tienda
         //constante que da una respuesta
         const response = await axios.get("https://fakestoreapi.com/products")
             .catch((err)=>{
-                console.log("error", err);
+                console.log("err", err);
             }); //para manejar el error 
             dispatch(setProducts(response.data)); //le pasamos los productos
             //al pasarle estos productos a esta accion, ésta se dirigirá a productsAction y devolverá los datos corectos (objeto), los cuales serán tomados por el reductor productReducer y obtendrá los productos establecidos. tras obtener los productos establecidos, obtendremos otro estado nuevo (el cual se actualizara con la carga util de los datos de nuestro servidor)
