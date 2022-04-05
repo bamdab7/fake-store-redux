@@ -15,3 +15,11 @@ export const selectedProducts = (products) =>{
         payload: products,
     }
 }
+
+//crearemos la seccion de la acción que se dedicara a eliminar el productos
+export const removeSelectedProducts = (products) =>{
+    return{
+        type:ActionTypes.REMOVE_SELECTED_PRODUCT,
+        //al eliminar el producto no tendra ninguna carga util
+    }
+}

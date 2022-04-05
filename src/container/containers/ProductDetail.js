@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 //importaremos axios para poder hacer la consulta de detalle
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { selectedProducts } from "../redux/actions/productActions";
+import { selectedProducts, removeSelectedProducts } from "../redux/actions/productActions";
 
 //tendremos nuestra pagina de detalles del producto
 const ProductDetail = () =>{
@@ -27,6 +27,11 @@ const ProductDetail = () =>{
         useEffect(()=>{ //esto nos llama a nuestro producto
         //este efecto se ejecutara si tenemos la identificacion del producto, y si nuestra idenfiticacion del producto no e sigual a vacio 
             if(productId && productId !== "") fetchProductDetail(); 
+            //asi cada vez que volvamos atras, se "limpiará todo"
+            return () => {
+                    //hacemos un envio y llamamos a la eliminación
+                    dispatch(removeSelectedProducts());
+                }
             }, [productId]); // debe ejecutarse cada vez que la identificacion del produto cambie
         return(
             <div className="ui grid container">

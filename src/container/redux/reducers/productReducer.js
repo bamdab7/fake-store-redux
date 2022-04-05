@@ -21,6 +21,8 @@ export const selectedProductReducer = (state={},{type, payload}) =>{
     switch(type){
         case ActionTypes.SELECTED_PRODUCT:
             return { ...state, ...payload }; //desesctructura la carga util
+        case ActionTypes.REMOVE_SELECTED_PRODUCT:
+            return {  }; //tendremos el producto seleccionado y querremos eliminarlo, por tanto devolveremos un objeto vacio
         default:
             return state;
     }
